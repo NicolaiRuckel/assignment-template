@@ -1,0 +1,103 @@
+\documentclass[11pt, a4paper]{scrartcl}
+\usepackage[sfdefault]{Fira Sans}
+\usepackage{FiraMono}
+\usepackage[english]{babel}
+
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{lightgray}{rgb}{0.50,0.50,0.50}
+\definecolor{codeForeground}{HTML}{444444}
+\definecolor{codeBlack}{HTML}{444444}
+\definecolor{codeRed}{HTML}{AF0000}
+\definecolor{codeGreen}{HTML}{008700}
+\definecolor{codeOrange}{HTML}{AF5F00}
+\definecolor{codeBlue}{HTML}{005FAF}
+\definecolor{codePurple}{HTML}{870087}
+\definecolor{codeCyan}{HTML}{008787}
+\definecolor{codeWhite}{HTML}{FFFFFF}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\lstset{
+  basicstyle=\small\ttfamily\color{codeForeground},
+  captionpos=b,
+  extendedchars=true,
+  tabsize=2,
+  columns=fixed,
+  keepspaces=true,
+  showstringspaces=false,
+  breaklines=true,
+  framesep=4pt,
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\tiny\ttfamily,
+  commentstyle=\color{codeGreen},
+  keywordstyle=\color{codePurple},
+  stringstyle=\color{codeBlue},
+  emphstyle=\color{codeRed},
+  xleftmargin=1em,
+  autogobble,
+}
+
+\lstdefinestyle{nonumbers}{
+  numbers=none,
+}
+
+\newcommand{\header}[2]
+{%
+    \vspace*{-2cm}
+    \parbox[b]{9cm}{%
+        \sffamily\color{lightgray}
+        {\color{black}\large Name of the chair}\\
+        Professor's name | TA's name
+    }
+    \hfill
+    % \includegraphics[height = 1cm]{images/logo}
+    {\color{black}\rule[1pt]{\textwidth}{0.5mm}}\\
+    \vspace*{5mm}
+    \begin{center}
+      \vskip -.5cm
+      \sffamily\bfseries
+      \ifdefined\issolution
+        {\LARGE Assignment #1}
+      \else
+        {\LARGE Course name --- Year\\[1ex]}
+        {\large Assignment #1}
+        \par
+        Submission due to #2
+      \fi
+    \end{center}
+    \vspace*{5mm}
+    \textbf{General notes for the assignments}
+    \begin{itemize}
+        \item Please submit the solution as a PDF file.
+    \end{itemize}
+}
+
+\newcommand{\solution}[1]{%
+    \ifdefined\issolution
+        \par
+        \textbf{Solution:}\par
+        #1
+    \fi
+}
+
+\newenvironment{assignment}{\begin{enumerate}}{\end{enumerate}}
+
+\newcommand{\task}[1]
+{%
+\item \textbf{#1}\par
+}
+
+\pagestyle{empty}
+
+\usepackage{enumerate}
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\bullet$}
+\renewcommand{\labelitemiii}{$\bullet$}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\theenumii}{\alph{enumii}}
