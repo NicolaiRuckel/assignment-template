@@ -68,3 +68,7 @@ Write the solutions in `\solution{ … }`, e.g.:
 ```
 
 Of course, the solutions are only shown in the solutions PDFs.
+
+## License
+
+This work by Nicolai Ruckel is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0).
